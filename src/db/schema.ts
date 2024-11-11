@@ -7,7 +7,7 @@ import {
   integer,
   text,
 } from "drizzle-orm/pg-core";
-import { Relations } from "drizzle-orm";
+import { relations } from "drizzle-orm";
 
 export const customers = pgTable("customers", {
   id: serial("id").primaryKey(),
@@ -44,3 +44,14 @@ export const tickets = pgTable("tickets", {
     .defaultNow()
     .$onUpdate(() => new Date()),
 });
+
+export const customersRelations = relations(customers, ({ many }) => ({
+  tickets: many(tickets),
+}));
+
+export const ticketsRelations = relations(tickets, ({ one }) => ({
+  customer: one(customers, {
+    fields: [tickets.customerId],
+    references: [customers.id],
+  }),
+}));
