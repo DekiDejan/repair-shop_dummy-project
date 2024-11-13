@@ -20,7 +20,7 @@ export const customers = pgTable("customers", {
   city: varchar("city").notNull(),
   state: varchar("state", { length: 2 }).notNull(),
   zip: varchar("zip", { length: 10 }).notNull(),
-  note: text("note"),
+  notes: text("notes"),
   active: boolean("active").notNull().default(true),
   createdAt: timestamp("created_at").notNull().defaultNow(),
   updatedAt: timestamp("updated_at")
@@ -35,7 +35,7 @@ export const tickets = pgTable("tickets", {
     .notNull()
     .references(() => customers.id),
   title: varchar("title").notNull(),
-  discription: text("discription"),
+  description: text("description"),
   completed: boolean("completed").notNull().default(false),
   tech: varchar("tech").notNull().default("unassigned"),
   createdAt: timestamp("created_at").notNull().defaultNow(),

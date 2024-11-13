@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1731497947608,
+      "tag": "0000_superb_cobalt_man",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1731498471891,
+      "tag": "0001_daffy_toxin",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1731498677655,
+      "tag": "0002_lucky_pestilence",
+      "breakpoints": true
+    }
+  ]
+}
